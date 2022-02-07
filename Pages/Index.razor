@@ -1,0 +1,30 @@
+﻿@page "/"
+@using ClosedXML.Excel
+@inject IJSRuntime JSRuntime
+
+<button type="button" @onclick="@(() => DownloadExcelDocument())">Download</button>
+
+@code
+{
+    public async Task DownloadExcelDocument()
+    {
+        using (var workbook = new XLWorkbook())
+        {
+            IXLWorksheet worksheet =
+            workbook.Worksheets.Add("Countries");
+            worksheet.Cell(1, 1).Value = "Id";
+            worksheet.Cell(2, 1).Value = "1";
+
+            using (var stream = new MemoryStream())
+            {
+                workbook.SaveAs(stream);
+                var content = stream.ToArray();
+                var fileName = "Countries.xlsx";
+                await JSRuntime.InvokeAsync<object>("saveAsFile", fileName, Convert.ToBase64String(content));
+                //https://www.puresourcecode.com/dotnet/blazor/how-to-export-data-to-excel-in-blazor/
+            }
+
+        }
+
+    }
+  }

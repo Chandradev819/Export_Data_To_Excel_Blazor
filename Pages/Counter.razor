@@ -1,0 +1,67 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<div class="container">
+    <fieldset class="border p-2">
+        <legend class="float-none w-auto">Stock Details</legend>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">Stock Code:</div>
+                <div class="col">Ti6A14v Laser</div>
+                <div class="col">Status:</div>
+                <div class="col">Value1, Value2, Value3</div>
+            </div>
+            <br />
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">Matrial Grade:</div>
+                <div class="col">ABC123</div>
+                <div class="col">Location:</div>
+                <div class="col">Ready To Use</div>
+            </div>
+            <br />
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">Batch No/Ident:</div>
+                <div class="col">ABC123</div>
+            </div>
+        </div>
+
+    </fieldset>
+    <fieldset class="border p-2">
+        <legend class="float-none w-auto">Reduce Stock</legend>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">Quantity Available(kg):</div>
+                <div class="col">29.6</div>
+            </div>
+            <br />
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">Remaining Quantity(kg):</div>
+                <div class="col"><input type="text"></div>
+                <div class="col"><button>Save</button></div>
+            </div>
+            <br />
+        </div>
+    </fieldset>
+    <fieldset class="border p-2">
+        <legend class="float-none w-auto">Allocate Stock</legend>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">Search</div>
+               <div class="col"><input type="text"></div>
+            </div>
+            <br />
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">Quantity Required(kg):</div>
+                <div class="col"><input type="text"></div>
+                <div class="col"><button>Allocate</button></div>
+            </div>
+            <br />
+           
+        </div>
+    </fieldset>
+</div>
+
+@code {
+
+}
